@@ -2,12 +2,7 @@
 
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
-var actions = document.getElementById('actions');
-var eraser = document.getElementById('eraser');
-var pen = document.getElementById('pen');
-var red = document.getElementById('red')
-var blue = document.getElementById('blue')
-var green = document.getElementById('green')
+var lineWidth = 3;
 /*** 调用函数调整画布大小 ***/
 
 autoSetCanvasSize(canvas)
@@ -53,6 +48,30 @@ green.onclick = function(){
     red.classList.remove('active')
     blue.classList.remove('active')
 }
+//切换粗细
+thin.onclick = function(){
+    lineWidth = 3
+    thin.classList.add('active')
+    thick.classList.remove('active')
+}
+thick.onclick = function(){
+    lineWidth = 6
+    thick.classList.add('active')
+    thin.classList.remove('active')
+}
+//清除当前页面
+clear.onclick = function(){
+    context.clearRect(0,0,canvas.width,canvas.height)
+}
+//下载当前页
+download.onclick = function(){
+    var url = canvas.toDataURL("image/png")
+    var a = document.createElement('a')
+    document.body.appendChild(a)
+    a.href = url
+    a.download = 'draw'
+    a.click()
+}
 /*** 函数库 ***/
 
 //自动调整画布大小
@@ -82,8 +101,8 @@ function drawCirclr(x, y, radius) {
 function drawLine(x1, y1, x2, y2) {
     context.beginPath()
     context.moveTo(x1, y1)
-    context.lineWidth = 5
     context.lineTo(x2, y2)
+    context.lineWidth = lineWidth
     context.stroke()
     context.closePath()
 }
