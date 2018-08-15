@@ -1,8 +1,8 @@
 /*** 声明变量 ***/
-
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 var lineWidth = 3;
+
 /*** 调用函数调整画布大小 ***/
 
 autoSetCanvasSize(canvas)
@@ -27,44 +27,44 @@ pen.onclick = function () {
     eraser.classList.remove('active')
 }
 //切换颜色
-red.onclick = function(){
-    context.fillStyle = 'red'
-    context.strokeStyle =  'red'
-    red.classList.add('active')
+black.onclick = function () {
+    context.fillStyle = 'black'
+    context.strokeStyle = 'black'
+    black.classList.add('active')
     blue.classList.remove('active')
-    green.classList.remove('active')
+    red.classList.remove('active')
 }
-blue.onclick = function(){
+blue.onclick = function () {
     context.fillStyle = 'blue'
-    context.strokeStyle =  'blue'
+    context.strokeStyle = 'blue'
     blue.classList.add('active')
     red.classList.remove('active')
-    green.classList.remove('active')
+    black.classList.remove('active')
 }
-green.onclick = function(){
+red.onclick = function () {
     context.fillStyle = 'green'
-    context.strokeStyle =  'green'
-    green.classList.add('active')
-    red.classList.remove('active')
+    context.strokeStyle = 'green'
+    red.classList.add('active')
+    black.classList.remove('active')
     blue.classList.remove('active')
 }
 //切换粗细
-thin.onclick = function(){
+thin.onclick = function () {
     lineWidth = 3
     thin.classList.add('active')
     thick.classList.remove('active')
 }
-thick.onclick = function(){
+thick.onclick = function () {
     lineWidth = 6
     thick.classList.add('active')
     thin.classList.remove('active')
 }
 //清除当前页面
-clear.onclick = function(){
-    context.clearRect(0,0,canvas.width,canvas.height)
+clear.onclick = function () {
+    context.clearRect(0, 0, canvas.width, canvas.height)
 }
 //下载当前页
-download.onclick = function(){
+download.onclick = function () {
     var url = canvas.toDataURL("image/png")
     var a = document.createElement('a')
     document.body.appendChild(a)
@@ -72,11 +72,12 @@ download.onclick = function(){
     a.download = 'draw'
     a.click()
 }
+
 /*** 函数库 ***/
 
 //自动调整画布大小
 function autoSetCanvasSize() {
-
+    setCanvasSize()
     window.onresize = function () {
         setCanvasSize()
     }

@@ -1,7 +1,6 @@
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
 }
 
 ul, ol {
@@ -9,7 +8,12 @@ ul, ol {
 }
 
 #canvas {
-    background-color: #8d8d8d;
+    background-color: gray;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
 }
 
 .icon {
@@ -24,8 +28,6 @@ ul, ol {
     fill: darkorange;
     transform: scale(1.2);
 }
-
-
 
 .actions {
     position: fixed;
@@ -54,7 +56,7 @@ ul, ol {
 .colors {
     position: absolute;
     top: 100px;
-    left: 0px;
+    left: 0;
     padding: 10px;
 }
 
@@ -71,12 +73,12 @@ ol > .active {
     transform: scale(1.5);
 }
 
-.colors .red {
-    background: red;
+.colors .black {
+    background: black;
 }
 
-.colors .green {
-    background: green;
+.colors .red {
+    background: red;
 }
 
 .colors .blue {
