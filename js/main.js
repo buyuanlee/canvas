@@ -4,7 +4,10 @@ var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 var actions = document.getElementById('actions');
 var eraser = document.getElementById('eraser');
-var brush = document.getElementById('brush');
+var pen = document.getElementById('pen');
+var red = document.getElementById('red')
+var blue = document.getElementById('blue')
+var green = document.getElementById('green')
 /*** 调用函数调整画布大小 ***/
 
 autoSetCanvasSize(canvas)
@@ -13,18 +16,43 @@ autoSetCanvasSize(canvas)
 
 listenToUser(canvas)
 
-/*** 切换橡皮擦与画笔 ***/
+/*** 切换状态 ***/
 
+//切换工具
 var eraserEnable = false
 eraser.onclick = function () {
     eraserEnable = true
-    actions.className = 'actions x'
-}
-brush.onclick = function () {
-    eraserEnable = false
-    actions.className = 'actions'
-}
+    eraser.classList.add('active')
+    pen.classList.remove('active')
 
+}
+pen.onclick = function () {
+    eraserEnable = false
+    pen.classList.add('active')
+    eraser.classList.remove('active')
+}
+//切换颜色
+red.onclick = function(){
+    context.fillStyle = 'red'
+    context.strokeStyle =  'red'
+    red.classList.add('active')
+    blue.classList.remove('active')
+    green.classList.remove('active')
+}
+blue.onclick = function(){
+    context.fillStyle = 'blue'
+    context.strokeStyle =  'blue'
+    blue.classList.add('active')
+    red.classList.remove('active')
+    green.classList.remove('active')
+}
+green.onclick = function(){
+    context.fillStyle = 'green'
+    context.strokeStyle =  'green'
+    green.classList.add('active')
+    red.classList.remove('active')
+    blue.classList.remove('active')
+}
 /*** 函数库 ***/
 
 //自动调整画布大小
@@ -46,7 +74,6 @@ function autoSetCanvasSize() {
 //绘制圆
 function drawCirclr(x, y, radius) {
     context.beginPath()
-    context.fillStyle = 'green'
     context.arc(x, y, radius, 0, Math.PI * 2)
     context.fill()
 }
@@ -54,7 +81,6 @@ function drawCirclr(x, y, radius) {
 //绘制路径
 function drawLine(x1, y1, x2, y2) {
     context.beginPath()
-    context.strokeStyle = 'orange'
     context.moveTo(x1, y1)
     context.lineWidth = 5
     context.lineTo(x2, y2)
