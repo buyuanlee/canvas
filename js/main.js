@@ -165,6 +165,7 @@ function listenToUser(canvas) {
                     x: x,
                     y: y
                 }
+                drawCirclr(x,y,lineWidth/2)
             }
 
         }
@@ -184,7 +185,7 @@ function listenToUser(canvas) {
                     y: y
                 }
                 drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y)
-                lastPoint = newPoint
+                //lastPoint = newPoint
             }
         }
         canvas.onmouseup = function (paint) {
