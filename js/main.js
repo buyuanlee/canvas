@@ -185,7 +185,7 @@ function listenToUser(canvas) {
                     y: y
                 }
                 drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y)
-                //lastPoint = newPoint
+                lastPoint = newPoint
             }
         }
         canvas.onmouseup = function (paint) {
