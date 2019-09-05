@@ -5,11 +5,12 @@ body {
 
 ul, ol {
     list-style: none;
+    margin: 0 12px;
+    padding: 0;
 }
 
 #canvas {
-    background-color: gray;
-
+    background: #fff;
     position: fixed;
     top: 0;
     left: 0;
@@ -24,8 +25,8 @@ ul, ol {
 }
 
 .icon.active {
-    stroke: darkorange;
-    fill: darkorange;
+    stroke: #3794ff;
+    fill: #3794ff;
     transform: scale(1.2);
 }
 
@@ -60,27 +61,7 @@ ul, ol {
     padding: 10px;
 }
 
-.colors li {
-    width: 25px;
-    height: 25px;
-    margin: 15px 0;
-    border-radius: 50%;
-    transition: all 0.3s;
-    box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .5);
-}
-
 ol > .active {
     transform: scale(1.5);
 }
 
-.colors .black {
-    background: black;
-}
-
-.colors .red {
-    background: red;
-}
-
-.colors .blue {
-    background: blue;
-}

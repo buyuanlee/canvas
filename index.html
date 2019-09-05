@@ -11,28 +11,40 @@
 <body>
 <canvas id="canvas" class="canvas"></canvas>
 <div id="actions" class="actions">
-    <svg id="pen" class="icon active" aria-hidden="true">
-        <use xlink:href="#icon-pen"></use>
-    </svg>
-    <svg id="eraser" class="icon" aria-hidden="true">
-        <use xlink:href="#icon-eraser"></use>
-    </svg>
-    <svg id="thin" class="icon active" aria-hidden="true">
-        <use xlink:href="#icon-thin"></use>
-    </svg>
-    <svg id="thick" class="icon" aria-hidden="true">
-        <use xlink:href="#icon-thick"></use>
-    </svg>
-    <svg id="download" class="icon" aria-hidden="true">
-        <use xlink:href="#icon-download"></use>
-    </svg>
-    <svg id="clear" class="icon" aria-hidden="true">
-        <use xlink:href="#icon-clear"></use>
-    </svg>
-    <ol class="colors">
-        <li id="black" class="black active"></li>
-        <li id="red" class="red"></li>
-        <li id="blue" class="blue"></li>
+    <ol>
+        <li>
+            <svg id="pen" class="icon active" aria-hidden="true">
+                <use xlink:href="#icon-pen"></use>
+            </svg>
+        </li>
+        <li>
+            <svg id="eraser" class="icon" aria-hidden="true">
+                <use xlink:href="#icon-eraser"></use>
+            </svg>
+        </li>
+        <li>
+            <svg id="thin" class="icon active" aria-hidden="true">
+                <use xlink:href="#icon-thin"></use>
+            </svg>
+        </li>
+        <li>
+            <svg id="thick" class="icon" aria-hidden="true">
+                <use xlink:href="#icon-thick"></use>
+            </svg>
+        </li>
+        <li>
+            <svg id="download" class="icon" aria-hidden="true">
+                <use xlink:href="#icon-download"></use>
+            </svg>
+        </li>
+        <li>
+            <svg id="clear" class="icon" aria-hidden="true">
+                <use xlink:href="#icon-clear"></use>
+            </svg>
+        </li>
+        <li>
+            <input type="color" id="colorPicker">
+        </li>
     </ol>
 </div>
 <script src="./js/main.js"></script>
